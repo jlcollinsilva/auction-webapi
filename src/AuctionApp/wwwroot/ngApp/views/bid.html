@@ -1,0 +1,29 @@
+﻿    <div class="modal-header">
+        <h3 class="modal-title">Enter your Bid for :<strong> {{modal.auctionData.name}}</strong> </h3>
+
+        <ul>
+            <li ng-repeat="error in modal.validationErrors track by $index" class="usrError">
+                {{error}}
+            </li>
+        </ul>
+
+    </div>
+
+    <div class="modal-body">
+        <div>
+            <label>Your Name:</label>
+            <input ng-model="modal.bidItem.bidName" required />
+        </div>
+        <div>
+            <label>Amount:</label>
+            <input ng-model="modal.bidItem.bidAmount" required />
+        </div>
+    </div>
+
+    <div class="modal-footer footerDetail">
+
+
+        <sm-button ng-click="modal.save()" class="sm-raised btn btn-primary">Bid</sm-button>
+        <sm-button ng-click="modal.closeDialog()" class="sm-raised btn btn-warning">Close</sm-button>
+
+    </div>

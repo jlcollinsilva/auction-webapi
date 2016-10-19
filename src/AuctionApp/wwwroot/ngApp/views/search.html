@@ -1,0 +1,11 @@
+﻿<h2>Enter your Search</h2>
+
+<input ng-model="searchText"
+       ng-model-options="{debounce:1000}" />
+
+<ul>
+    <li ng-repeat="it in controller.itemsauction |filter:{description:searchText}" ng-click="controller.bid(it.id)">
+         {{it.name}} - {{it.description}} - <a href="#"> Bid </a>
+
+    </li>
+</ul>

@@ -1,0 +1,33 @@
+<ul>
+    <li ng-repeat="error in controller.validationErrors track by $index" class="usrError">
+        {{error}}
+    </li>
+</ul>
+
+<form ng-submit="controller.save()">
+    <div>
+        <label>Name:</label>
+            <input ng-model="controller.itemauction.name" />  
+    </div>
+
+    <div>
+        <label>Description:</label>
+            <input ng-model="controller.itemauction.description" />
+    </div>
+
+    <div>
+        <label>Minimum Bid:</label>
+            <input ng-model="controller.itemauction.minimumbid" />
+    </div>
+    
+    <div>
+        <label>Max. # of Bids:</label>
+        <input ng-model="controller.itemauction.numberofbid" />
+    </div>
+        <input type="submit" value="Add" class="bg-primary btn" />
+</form>
+<ul>
+    <li ng-repeat="it in controller.itemsauction" ng-click="controller.bid(it.id)">
+        {{it.name}} - {{it.description}} - <a href="#" > Bid </a> 
+    </li>
+</ul>
